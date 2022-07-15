@@ -21,10 +21,10 @@ class CreateTrainsTable extends Migration
             $table->string('stazione_arrivo');
             $table->dateTime('orario_partenza');
             $table->dateTime('orario_arrivo');
-            $table->int('codice_treno');
-            $table->tinyint('num_carrozze');
-            $table->boolean('in_orario');
-            $table->boolean('cancellato');
+            $table->integer('codice_treno');
+            $table->tinyInteger('num_carrozze')->nullable();
+            $table->boolean('in_orario')->default(true);
+            $table->boolean('cancellato')->default(true);
         });
     }
 
